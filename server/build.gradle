@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile libs.websockets,
+            libs.jetty_server
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.easytesting:fest-assert:1.4'
+}

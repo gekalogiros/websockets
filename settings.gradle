@@ -1,0 +1,8 @@
+rootProject.name = 'websockets-example'
+
+include 'server'
+
+include 'client'
+
+include 'entrypoint'
+

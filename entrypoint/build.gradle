@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'distribution'
+
+sourceCompatibility = 1.8
+
+def mainClassName = "com.gkalogiros.websockets.Application"
+
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":server"),
+            project(":client")
+}
